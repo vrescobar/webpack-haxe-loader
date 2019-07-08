@@ -2,12 +2,11 @@
 
 This is the simplest and most compatible [Haxe](https://haxe.org) loader for webpack that exists.
 
-It takes the javascript output as it is created by your `hxml` haxe file and passes it to webpack without any other additional transformation. That means that any library, feature or haxe version will be supported as 
-long as the generated JS files are self-contained.
+It takes the javascript output as it is created by your *hxml* haxe file and passes it to webpack without any other additional transformation. That means that any library, feature or haxe version will be supported as 
+long as the generated JS files by your *hxml* are self-contained.
 
-That means that in your projects you can use the newest hace release and just import your
-new **JS ES6** Haxe generated classes without any trouble, or use any additional library or extern
-as you would do in any other bare haxe project.
+That means that in your projects you can use the newest haxe release and just import your new **JS ES6** Haxe generated classes without any trouble. Or use any additional library or extern
+without the risk of any incompatibility, as you would do in any other bare haxe project.
 
 Example of usage with ES6 class import style:
 
@@ -40,16 +39,17 @@ That means:
 - There is support for a Main (optional)
 - All symbols exposed will be at the namespace from your hxml
 - ES6 javascript code from Haxe 4 works fine (Haxe version 4 has the flag `-D js-es=6`)
+- You can pass generated ES6 code to a babel pipeline within webpack.
 - SourceMaps: if any `*.map` files are found these will be passed to webpack (Haxe's flag `-D source-map-content`)
 - No one stops you from generating Type Script definitions with `-lib hxtsdgen` ([see project](https://github.com/nadako/hxtsdgen))
 - Chrome and webpack source maps perfect in Chrome when using `devtool: 'source-map'`. Firefox never worked for me.
 
-Because it just uses the raw vanilla haxe's HXML file and reads the whole bundle you could
+Because it **just** uses the raw vanilla haxe's HXML file and reads the whole bundle you could
 use virtually any library, extern as long as it creates a single bundle as pointed by the flags `-js <filename>`.
 
 # Not tested:
-- If there are many `-js` targets (die `--next`) each bundle is read and passed to webpack. This option has not been tested. And my guess is that some source maps might be missing (better use different hxml files).
-- Splitting a single hxml bild in multiple files has not been tested and I believe that this falls out of the scope from this *simple* loader.
+- If there are many `-js` targets (due `--next` usage) each bundle is read and passed to webpack. This option has not been tested yet.
+- Splitting a single hxml build in multiple files has not been tested and I believe that this falls out of the scope from this *simple* loader since as far as I know it is not an option supported out of the box ba the haxe compiler.
 
 # Installation & Setup
 
