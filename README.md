@@ -119,10 +119,10 @@ module.exports = {
     devtool: 'source-map',
   chainWebpack: (config) => {
     config.module
-      .rule('haxe-loader')
+      .rule('simple-haxe-loader')
       .test(/\.hxml$/)
-      .use('haxe-loader')
-        .loader('haxe-loader')
+      .use('simple-haxe-loader')
+        .loader('simple-haxe-loader')
         .options({
           debug: true
         })
@@ -140,7 +140,7 @@ module.exports = {
     rules: [
       {
         test: /\.hxml$/,
-        loader: 'haxe-loader',
+        loader: 'simple-haxe-loader',
         options: {
           debug: true
         }

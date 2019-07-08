@@ -1,5 +1,5 @@
 {
-  "name": "haxe-loader",
+  "name": "simple-haxe-loader",
   "description": "Simple Webpack loader for the Haxe programming language.",
   "version": "0.11.0",
   "author": "Victor R. Escobar",
