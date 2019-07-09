@@ -73,7 +73,8 @@ module.exports = function (hxmlContent) {
                     return callback(err);
                 }
                 // Small correction to pack Haxe's global namespace within a regular ES6 module
-                const js_to_inline = "var exports = module.exports;\n" + js_output;
+                const d_ts_dile = jsOutputFile.replace(/\.js$/i,'.d.ts')
+                const js_to_inline = `/// <reference path="${d_ts_dile}>" />\nvar exports = module.exports;\n${js_output}\n`;
                 const source_map_path = jsOutputFile + ".map";
                 fs.readFile(source_map_path, "utf-8", function (err, sourceMapContent) {
                     if (!err) {

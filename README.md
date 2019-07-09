@@ -56,12 +56,12 @@ use virtually any library, extern as long as it creates a single bundle as point
 NPM:
 
 ```bash
-npm install --save-dev https://github.com/vrescobar/webpack-haxe-loader
+npm install --save-dev https://github.com/vrescobar/webpack-simple-haxe-loader
 ```
 
 Yarn:
 ```bash
-yarn add --dev https://github.com/vrescobar/webpack-haxe-loader
+yarn add --dev https://github.com/vrescobar/webpack-simple-haxe-loader
 ```
 
 In the future I might build the project and release it at npm... or not.

@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vrescobar/webpack-haxe-loader.git"
+    "url": "https://github.com/vrescobar/webpack-simple-haxe-loader.git"
   },
   "files": [
     "index.js",
